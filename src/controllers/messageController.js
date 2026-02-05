@@ -6,9 +6,10 @@ const handleMessage = async (req, res) => {
     const body = req.body;
     let from = body.entry[0].changes[0].value.messages[0].from;
     let msgbody = body.entry[0].changes[0].value.messages[0].text.body;
-    console.log('request body:', JSON.stringify(body.entry[0].changes[0].value.messages[0]));
-    if(msgbody == "Cabify"){
-    whatsappService.sendMessage(from, messages.welcome);
+    console.log('request body:', JSON.stringify(body.entry[0].changes[0].value.messages[0]), msgbody);
+    if (msgbody == "Cabify") {
+        console.log(from, messages.welcome);
+        whatsappService.sendMessage(from, messages.welcome);
     }
     res.send('OK');
     // if (body.object) {

@@ -3,7 +3,7 @@ const responseHandler = require('../handlers/responseHandler');
 
 const handleMessage = async (req, res) => {
     const body = req.body;
-    console.log('request body:', body.entry[0].changes);
+    console.log('request body:', JSON.stringify(body.entry[0].changes));
     //whatsappService.sendMessage('584144197764', 'Hola, este es un mensaje de prueba desde Cabify Bot');
     res.send('OK');
     // if (body.object) {

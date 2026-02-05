@@ -5,7 +5,7 @@ const partnerToken = process.env.PARTNER_TOKEN;
 
 const sendMessage = async (to, text) => {
     const url = `https://partner.gupshup.io/partner/app/${appId}/v3/message`;
-    const data = `messaging_product=whatsapp&recipient_type=individual&source=${phoneNumberId}&dto=${to}&type=text&text={"body":"${text}"}`;
+    const data = `messaging_product=whatsapp&recipient_type=individual&source=${phoneNumberId}&to=${to}&type=text&text={"body":"${text}"}`;
 
     try {
         const response = await axios.post(url, data, {

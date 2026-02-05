@@ -46,3 +46,5 @@ Aquí tienes cómo reportarlo de forma sencilla para que podamos darte una soluc
 Un especialista te responderá por aquí en unos minutos`,
 
 }
+
+module.exports = messages;

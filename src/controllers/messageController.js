@@ -1,12 +1,15 @@
 const whatsappService = require('../services/whatsappService');
 const responseHandler = require('../handlers/responseHandler');
+const messages = require('../handlers/messages');
 
 const handleMessage = async (req, res) => {
     const body = req.body;
     let from = body.entry[0].changes[0].value.messages[0].from;
     let msgbody = body.entry[0].changes[0].value.messages[0].text.body;
     console.log('request body:', JSON.stringify(body.entry[0].changes[0].value.messages[0]));
-    whatsappService.sendMessage('584144197764', 'Hola, este es un mensaje de prueba desde Cabify Bot');
+    if(msgbody == "Cabify"){
+    whatsappService.sendMessage(from, messages.welcome);
+    }
     res.send('OK');
     // if (body.object) {
     //     if (body.entry && body.entry[0].changes && body.entry[0].changes[0].value.messages) {

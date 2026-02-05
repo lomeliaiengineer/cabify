@@ -1,5 +1,5 @@
 const messages = {
-    welcome: `Hola, te saluda tu ejecutivo IA de Cabify. \n\nEstoy aquí para darte una respuesta inmediata y que no pierdas tiempo esperando.`,
+    welcome: `Hola, te saluda tu ejecutivo IA de Cabify.Estoy aquí para darte una respuesta inmediata y que no pierdas tiempo esperando.`,
     welcome_options: `¿Cómo podemos ayudarte hoy? Elige una opción:,Dudas con plataforma,Cuenta bloqueada,Carga de facturas,¿Nuevo en la plataforma?,Solicitud Plantilla`,
     douts_options:`Elige una opción:,Login,Gestión usuarios y Viajes,Control de gastos,Canal de ayuda,Otros`,
     login:`Para que ingreses a tu cuenta ahora mismo, elige la opción que más te convenga:

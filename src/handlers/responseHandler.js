@@ -21,7 +21,7 @@ const getResponse = (messageBody) => {
         let text = formatText(messages.newuser);
         let list = formatList(messages.welcome_options);
         return [[text, 'text'], [list, 'interactive']];
-    } else if (lowerMsg == 'solicitud Plantilla') {
+    } else if (lowerMsg == 'solicitud plantilla') {
         let qr = formatQuickReplies(messages.plantillarequest);
         return [[qr, 'interactive']];
     } else if (lowerMsg == 'plantilla carga masiva') {
@@ -42,7 +42,7 @@ const getResponse = (messageBody) => {
     }else if (lowerMsg == 'gestión usuarios') {
         let text = formatText(messages.usermanagement);
         return [[text, 'text']];
-    }else if (lowerMsg == 'politicas de viaje') {
+    }else if (lowerMsg == 'politicas de viajes') {
         let text = formatText(messages.travelpolicy);
         return [[text, 'text']];
     }else if (lowerMsg == 'centro de coste') {

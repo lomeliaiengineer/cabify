@@ -23,7 +23,7 @@ Para que tu empresa aproveche al máximo Cabify, queremos que gestiones tu movil
 Desde el celular: https://www.youtube.com/watch?v=FhgTQG15Vq4 
 Desde la computadora: https://youtu.be/epxbjKC8dNg`,
 //Gestión usuarios y Viajes
-    usertravels_options:`Gestion de usuarios y viajes, Elige una opción:,,MenuGestión usuarios,Politicas de  viajes,Centro de coste,Reportes de viajes`,
+    usertravels_options:`Gestion de usuarios y viajes, Elige una opción:,,MenuGestión usuarios,Politicas de viajes,Centro de coste,Reportes de viajes`,
     usermanagement:`Para que tu equipo empiece a moverse ahora mismo, solo tienes que darlos de alta en la plataforma. Sigue este paso a paso para crearlos:
 
 Nuevo usuario: https://youtu.be/gexc71CUdAg 

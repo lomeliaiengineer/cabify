@@ -15,6 +15,7 @@ const sendMessage = async (to, message, type) => {
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
         });
+        console.log(data)
         console.log('Message sent successfully:', message,response.data);
         return true;
     } catch (error) {

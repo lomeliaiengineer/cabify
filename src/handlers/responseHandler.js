@@ -13,6 +13,10 @@ const getResponse = (messageBody) => {
     }
 };
 
+const removeLineBreaks = (text) => {
+    return text.replace(/\n/g, '');
+}
+
 const formatText = (text) => {
     return { body: text };
 }
@@ -26,7 +30,6 @@ const formatList = (options) => {
             "id": `SECTION_1_ROW_${index + 1}_ID`,
             "title": option.slice(0, 24),
             "description": ""
-
         });
     }
 
@@ -45,7 +48,7 @@ const formatList = (options) => {
             ]
         }
     };
-    return list;
+    return removeLineBreaks(JSON.stringify(list));
 }
 
 

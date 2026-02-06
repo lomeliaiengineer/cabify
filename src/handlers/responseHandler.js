@@ -62,10 +62,12 @@ const getResponse = (messageBody) => {
         return [[qr, 'interactive']];
     }else if (lowerMsg == 'reporte incidencias') {
         let text = formatText(messages.incidentreport);
-        return [[text, 'text']];
-    }else if (lowerMsg == 'certificado de carbono') {
+        let list = formatList(messages.douts_options);
+        return [[text, 'text'], [list, 'interactive']];
+    }else if (lowerMsg == 'certificado carbono') {
         let text = formatText(messages.carboncertificate);
-        return [[text, 'text']];
+        let list = formatList(messages.douts_options);
+        return [[text, 'text'], [list, 'interactive']];
     }else if (lowerMsg == 'otros') {
         let text = formatText(messages.others);
         let list = formatList(messages.douts_options);

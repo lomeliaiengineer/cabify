@@ -23,7 +23,7 @@ Para que tu empresa aproveche al máximo Cabify, queremos que gestiones tu movil
 Desde el celular: https://www.youtube.com/watch?v=FhgTQG15Vq4 
 Desde la computadora: https://youtu.be/epxbjKC8dNg`,
 //Gestión usuarios y Viajes
-    usertravels_options:`Elige una opción:,Gestión usuarios,Politicas de  viajes,Centro de coste,Reportes de viajes`,
+    usertravels_options:`Gestion de usuarios y viajes, Elige una opción:,,MenuGestión usuarios,Politicas de  viajes,Centro de coste,Reportes de viajes`,
     usermanagement:`Para que tu equipo empiece a moverse ahora mismo, solo tienes que darlos de alta en la plataforma. Sigue este paso a paso para crearlos:
 
 Nuevo usuario: https://youtu.be/gexc71CUdAg 
@@ -48,7 +48,7 @@ https://youtu.be/f4LIY7ME4tc
 ¿Ya pagaste? Si tu factura figura como pendiente, envía el comprobante a facturacion.empresas.pe@cabify.zendesk.com para que tu cuenta siga activa y sin bloqueos.`,
 
 //Canal de ayuda
-    helpchannel_options:`Elige una opción:Reporte incidencias,Certificado de carbono`,
+    helpchannel_options:`Elige una opción:,Reporte incidencias,Certificado carbono`,
     incidentreport:`Para que podamos ayudarte a resolver cualquier inconveniente con tus trayectos, es fundamental que sepamos qué ocurrió. 
 
 Aquí tienes cómo reportarlo de forma sencilla para que podamos darte una solución: https://youtu.be/KMEYtXNsWPo`,

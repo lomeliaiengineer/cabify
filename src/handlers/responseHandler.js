@@ -15,23 +15,28 @@ const getResponse = (messageBody) => {
         return [[text, 'text']];
     } else if (lowerMsg == 'carga de facturas') {
         let text = formatText(messages.billingupload);
-        return [[text, 'text']];
+        let list = formatList(messages.welcome_options);
+        return [[text, 'text'], [list, 'interactive']];
     } else if (lowerMsg == '¿nuevo en la plataforma?') {
         let text = formatText(messages.newuser);
-        return [[text, 'text']];
+        let list = formatList(messages.welcome_options);
+        return [[text, 'text'], [list, 'interactive']];
     } else if (lowerMsg == 'solicitud Plantilla') {
         let qr = formatQuickReplies(messages.plantillarequest);
         return [[qr, 'interactive']];
     } else if (lowerMsg == 'plantilla carga masiva') {
         let text = formatText(messages.masivepantilla);
-        return [[text, 'text']];
+        let list = formatList(messages.welcome_options);
+        return [[text, 'text'], [list, 'interactive']];
     } else if (lowerMsg == 'plantilla politica de viaje') {
         let text = formatText(messages.travelpolicyplantilla);
-        return [[text, 'text']];
+        let list = formatList(messages.welcome_options);
+        return [[text, 'text'], [list, 'interactive']];
     }else if (lowerMsg == 'login') {
         let text = formatText(messages.login);
-        return [[text, 'text']];
-    }else if (lowerMsg == 'gestión usuarios y viajes') {
+        let list = formatList(messages.douts_options);
+        return [[text, 'text'], [list, 'interactive']];
+    }else if (lowerMsg == 'gestión usuarios y viaje') {
         let list = formatList(messages.usertravels_options);
         return [[list, 'interactive']];
     }else if (lowerMsg == 'gestión usuarios') {
@@ -46,7 +51,7 @@ const getResponse = (messageBody) => {
     }else if (lowerMsg == 'reportes de viajes') {
         let text = formatText(messages.travelreports);
         return [[text, 'text']];
-    }else if (lowerMsg == 'gestion de gastos') {
+    }else if (lowerMsg == 'control de gastos') {
         let qr = formatQuickReplies(messages.expensecontrol_options);
         return [[qr, 'interactive']];
     }else if (lowerMsg == 'facturación') {
@@ -63,7 +68,8 @@ const getResponse = (messageBody) => {
         return [[text, 'text']];
     }else if (lowerMsg == 'otros') {
         let text = formatText(messages.others);
-        return [[text, 'text']];
+        let list = formatList(messages.douts_options);
+        return [[text, 'text'], [list, 'interactive']];
     }else {
         let text = formatText(messages.fallback);
         return [[text, 'text']];
@@ -129,7 +135,7 @@ const formatQuickReplies = (options) => {
             "buttons": rows
         }
     }
-    return removeLineBreaks(JSON.stringify(list));
+    return removeLineBreaks(JSON.stringify(quickReplies));
 }
 
 

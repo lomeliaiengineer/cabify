@@ -3,7 +3,7 @@ const messages = {
 
     Estoy aquí para darte una respuesta inmediata y que no pierdas tiempo esperando.`,
     welcome_options: `¿Cómo podemos ayudarte hoy?, Elige una opción:,,Menu,Dudas con plataforma,Cuenta bloqueada,Carga de facturas,¿Nuevo en la plataforma?,Solicitud Plantilla`,
-    douts_options:`Elige una opción:,Login,Gestión usuarios y Viajes,Control de gastos,Canal de ayuda,Otros`,
+    douts_options:`Dudas con plataforma,Elige una opción:,,Menu,Login,Gestión usuarios y Viajes,Control de gastos,Canal de ayuda,Otros`,
     login:`Para que ingreses a tu cuenta ahora mismo, elige la opción que más te convenga:
 
 Desde el celular: https://www.youtube.com/watch?v=FhgTQG15Vq4 

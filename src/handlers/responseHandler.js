@@ -6,8 +6,9 @@ const getResponse = (messageBody) => {
         let text = formatText(messages.welcome);
         let list = formatList(messages.welcome_options);
         return [[text, 'text'], [list, 'interactive']];
-    } else if (lowerMsg.includes('bye')) {
-        return 'Goodbye! Have a great day!';
+    } else if (lowerMsg.includes('dudas con plataforma')) {
+        let list = formatList(messages.douts_options);
+        return [list, 'interactive'];
     } else {
         return `Echo: ${messageBody}`;
     }

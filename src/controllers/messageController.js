@@ -1,10 +1,25 @@
 const whatsappService = require('../services/whatsappService');
 const responseHandler = require('../handlers/responseHandler');
 const messages = require('../handlers/messages');
+const e = require('express');
 
 const handleMessage = async (req, res) => {
     const body = req.body;
+
+    let type = body.entry[0].changes[0].value.messages[0].type;
+    let msgbody = '';
+    if (type === 'text') {
+        msgbody = body.entry[0].changes[0].value.messages[0].text.body;
+    } else if (type === 'interactive') {
+        if (body.entry[0].changes[0].value.messages[0].interactive.type === 'list_reply') {
+            msgbody = body.entry[0].changes[0].value.messages[0].interactive.list_reply.title;
+        }
+        else if (body.entry[0].changes[0].value.messages[0].interactive.type === 'button_reply') {
+            msgbody = body.entry[0].changes[0].value.messages[0].interactive.button_reply.title;
+        }
+    }
     let from = body.entry[0].changes[0].value.messages[0].from;
+
     //let msgbody = body.entry[0].changes[0].value.messages[0].text.body;
     console.log('request body:', JSON.stringify(body.entry[0].changes[0].value.messages[0]));
 

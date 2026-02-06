@@ -4,9 +4,9 @@ const phoneNumberId = process.env.PHONE_NUMBER_ID;
 const partnerToken = process.env.PARTNER_TOKEN;
 
 
-const sendMessage = async (to, data, type) => {
+const sendMessage = async (to, message, type) => {
     const url = `https://partner.gupshup.io/partner/app/${appId}/v3/message`;
-    const data = `messaging_product=whatsapp&recipient_type=individual&source=${phoneNumberId}&to=${to}&type=${type}&${type}=${data}`;
+    const data = `messaging_product=whatsapp&recipient_type=individual&source=${phoneNumberId}&to=${to}&type=${type}&${type}=${message}`;
 
     try {
         const response = await axios.post(url, data, {

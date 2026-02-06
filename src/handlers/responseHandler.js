@@ -2,7 +2,7 @@ const messages = require("./messages");
 
 const getResponse = (messageBody) => {
     const lowerMsg = messageBody.toLowerCase();
-    console.log('Received message:', messageBody);
+    console.log('Received message:', lowerMsg);
     if (lowerMsg == 'cabify') {
         let text = formatText(messages.welcome);
         let list = formatList(messages.welcome_options);

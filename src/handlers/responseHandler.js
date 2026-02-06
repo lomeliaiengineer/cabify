@@ -1,7 +1,7 @@
 const messages = require("./messages");
 
 const getResponse = (messageBody) => {
-    const lowerMsg = messageBody.toLowerCase();
+    const lowerMsg = messageBody.toLowerCase().trim();
     console.log('Received message:', lowerMsg);
     if (lowerMsg == 'cabify') {
         let text = formatText(messages.welcome);
@@ -9,10 +9,10 @@ const getResponse = (messageBody) => {
         return [[text, 'text'], [list, 'interactive']];
     } else if (lowerMsg == 'dudas con plataforma') {
         let list = formatList(messages.douts_options);
-        return [list, 'interactive'];
+        return [[list, 'interactive']];
     } else {
         let text = formatText(messages.fallback);
-        return [text, 'text'];
+        return [[text, 'text']];
     }
 };
 

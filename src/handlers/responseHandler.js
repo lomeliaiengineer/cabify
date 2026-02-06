@@ -19,7 +19,7 @@ const removeLineBreaks = (text) => {
 
 const formatText = (text) => {
     return JSON.stringify({ body: text });
-    
+
 }
 
 const formatList = (options) => {
@@ -51,6 +51,31 @@ const formatList = (options) => {
     };
     return removeLineBreaks(JSON.stringify(list));
 }
+
+const formatQuickReplies = (options) => {
+    let menu = options.split(',').slice(0, 1);
+    let optionsList = options.split(',').slice(1);
+    let rows = [];
+    for (let [index, option] of optionsList.entries()) {
+        rows.push({
+            "type": "reply",
+            "reply": {
+                "id": `UNIQUE_BUTTON_ID_${index + 1}`,
+                "title": option.trim().slice(0, 20)
+            }
+        });
+    }
+    let quickReplies = {
+        "type": "button",
+        "body": { "text": menu[0] },
+        "action": {
+            "buttons": rows
+        }
+    }
+    return removeLineBreaks(JSON.stringify(list));
+}
+
+
 
 
 

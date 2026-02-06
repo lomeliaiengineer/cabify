@@ -3,6 +3,20 @@ const messages = {
 
 Estoy aquí para darte una respuesta inmediata y que no pierdas tiempo esperando.`,
     welcome_options: `¿Cómo podemos ayudarte hoy?, Elige una opción:,,Menu,Dudas con plataforma,Cuenta bloqueada,Carga de facturas,¿Nuevo en la plataforma?,Solicitud Plantilla`,
+    
+    accountblocked:`Podrías facilitarnos el RUC de empresa`,
+    billingupload:`Para que podamos cargar tus facturas en la plataforma, por favor envía todos los sustentos necesarios a facturacion.empresas.pe@cabify.zendesk.com. 
+    
+Si algo falló en la carga, alzalo igualmente por este buzón comentando el motivo de rechazo.`,
+
+    newuser:`¡Bienvenido a Cabify!
+    
+Para que tu empresa aproveche al máximo Cabify, queremos que gestiones tu movilidad de la forma más eficiente, entonces aquí tienes todas nuestras funcionalidades explicadas en un solo lugar:link`,
+
+    plantillarequest:`Escoge una opcion:,Plantilla Carga Masiva,Plantilla Politica de Viaje`,
+
+    masivepantilla:`Plantilla de carga masiva: link`,
+    travelpolicyplantilla:`Plantilla de política de viaje: link`,
     douts_options:`Dudas con plataforma,Elige una opción:,,Menu,Login,Gestión usuarios y Viajes,Control de gastos,Canal de ayuda,Otros`,
     login:`Para que ingreses a tu cuenta ahora mismo, elige la opción que más te convenga:
 
@@ -34,7 +48,7 @@ https://youtu.be/f4LIY7ME4tc
 ¿Ya pagaste? Si tu factura figura como pendiente, envía el comprobante a facturacion.empresas.pe@cabify.zendesk.com para que tu cuenta siga activa y sin bloqueos.`,
 
 //Canal de ayuda
-    helpchannel_options:`Elige una opción:Reporte de incidencias,Certificado de carbono`,
+    helpchannel_options:`Elige una opción:Reporte incidencias,Certificado de carbono`,
     incidentreport:`Para que podamos ayudarte a resolver cualquier inconveniente con tus trayectos, es fundamental que sepamos qué ocurrió. 
 
 Aquí tienes cómo reportarlo de forma sencilla para que podamos darte una solución: https://youtu.be/KMEYtXNsWPo`,

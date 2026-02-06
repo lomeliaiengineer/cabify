@@ -10,7 +10,61 @@ const getResponse = (messageBody) => {
     } else if (lowerMsg == 'dudas con plataforma') {
         let list = formatList(messages.douts_options);
         return [[list, 'interactive']];
-    } else {
+    } else if (lowerMsg == 'cuenta bloqueada') {
+        let text = formatText(messages.accountblocked);
+        return [[text, 'text']];
+    } else if (lowerMsg == 'carga de facturas') {
+        let text = formatText(messages.billingupload);
+        return [[text, 'text']];
+    } else if (lowerMsg == '¿nuevo en la plataforma?') {
+        let text = formatText(messages.newuser);
+        return [[text, 'text']];
+    } else if (lowerMsg == 'solicitud Plantilla') {
+        let qr = formatQuickReplies(messages.plantillarequest);
+        return [[qr, 'interactive']];
+    } else if (lowerMsg == 'plantilla carga masiva') {
+        let text = formatText(messages.masivepantilla);
+        return [[text, 'text']];
+    } else if (lowerMsg == 'plantilla politica de viaje') {
+        let text = formatText(messages.travelpolicyplantilla);
+        return [[text, 'text']];
+    }else if (lowerMsg == 'login') {
+        let text = formatText(messages.login);
+        return [[text, 'text']];
+    }else if (lowerMsg == 'gestión usuarios y viajes') {
+        let list = formatList(messages.usertravels_options);
+        return [[list, 'interactive']];
+    }else if (lowerMsg == 'gestión usuarios') {
+        let text = formatText(messages.usermanagement);
+        return [[text, 'text']];
+    }else if (lowerMsg == 'politicas de viaje') {
+        let text = formatText(messages.travelpolicy);
+        return [[text, 'text']];
+    }else if (lowerMsg == 'centro de coste') {
+        let text = formatText(messages.costcenter);
+        return [[text, 'text']];
+    }else if (lowerMsg == 'reportes de viajes') {
+        let text = formatText(messages.travelreports);
+        return [[text, 'text']];
+    }else if (lowerMsg == 'gestion de gastos') {
+        let qr = formatQuickReplies(messages.expensecontrol_options);
+        return [[qr, 'interactive']];
+    }else if (lowerMsg == 'facturación') {
+        let text = formatText(messages.billing);
+        return [[text, 'text']];
+    }else if (lowerMsg == 'canal de ayuda') {
+        let qr = formatQuickReplies(messages.helpchannel_options);
+        return [[qr, 'interactive']];
+    }else if (lowerMsg == 'reporte incidencias') {
+        let text = formatText(messages.incidentreport);
+        return [[text, 'text']];
+    }else if (lowerMsg == 'certificado de carbono') {
+        let text = formatText(messages.carboncertificate);
+        return [[text, 'text']];
+    }else if (lowerMsg == 'otros') {
+        let text = formatText(messages.others);
+        return [[text, 'text']];
+    }else {
         let text = formatText(messages.fallback);
         return [[text, 'text']];
     }

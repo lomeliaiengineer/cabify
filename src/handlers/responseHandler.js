@@ -2,15 +2,17 @@ const messages = require("./messages");
 
 const getResponse = (messageBody) => {
     const lowerMsg = messageBody.toLowerCase();
+    console.log('Received message:', messageBody);
     if (lowerMsg == 'cabify') {
         let text = formatText(messages.welcome);
         let list = formatList(messages.welcome_options);
         return [[text, 'text'], [list, 'interactive']];
-    } else if (lowerMsg.includes('dudas con plataforma')) {
+    } else if (lowerMsg == 'dudas con plataforma') {
         let list = formatList(messages.douts_options);
         return [list, 'interactive'];
     } else {
-        return `Echo: ${messageBody}`;
+        let text = formatText(messages.fallback);
+        return [text, 'text'];
     }
 };
 

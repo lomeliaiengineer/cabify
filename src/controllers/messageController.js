@@ -20,9 +20,6 @@ const handleMessage = async (req, res) => {
     }
     let from = body.entry[0].changes[0].value.messages[0].from;
 
-    //let msgbody = body.entry[0].changes[0].value.messages[0].text.body;
-    console.log('request body:', JSON.stringify(body.entry[0].changes[0].value.messages[0]));
-
     let response = responseHandler.getResponse(msgbody);
 
     if (response.length > 1) {

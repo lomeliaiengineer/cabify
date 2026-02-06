@@ -1,7 +1,7 @@
 const messages = {
     welcome: `Hola, te saluda tu ejecutivo IA de Cabify. 
 
-    Estoy aquí para darte una respuesta inmediata y que no pierdas tiempo esperando.`,
+Estoy aquí para darte una respuesta inmediata y que no pierdas tiempo esperando.`,
     welcome_options: `¿Cómo podemos ayudarte hoy?, Elige una opción:,,Menu,Dudas con plataforma,Cuenta bloqueada,Carga de facturas,¿Nuevo en la plataforma?,Solicitud Plantilla`,
     douts_options:`Dudas con plataforma,Elige una opción:,,Menu,Login,Gestión usuarios y Viajes,Control de gastos,Canal de ayuda,Otros`,
     login:`Para que ingreses a tu cuenta ahora mismo, elige la opción que más te convenga:
@@ -44,6 +44,8 @@ Aquí tienes cómo reportarlo de forma sencilla para que podamos darte una soluc
     others:`Te conectamos con nuestro equipo humano, ya que así podemos darte una solución más personalizada. 
     
 Un especialista te responderá por aquí en unos minutos`,
+
+    fallback: `Lo siento, no entendí tu mensaje. Por favor, elige una opción del menú o escribe "Cabify" para empezar de nuevo.`
 
 }
 

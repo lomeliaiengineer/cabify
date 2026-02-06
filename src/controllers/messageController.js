@@ -27,7 +27,8 @@ const handleMessage = async (req, res) => {
             await whatsappService.sendMessage(from, ...resp);
         });
     } else {
-        whatsappService.sendMessage(from, ...response);
+        console.log('Single response:', response);
+        whatsappService.sendMessage(from, ...response[0]);
     }
     res.send('OK');
 

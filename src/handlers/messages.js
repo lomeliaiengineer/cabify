@@ -13,7 +13,7 @@ Si algo falló en la carga, alzalo igualmente por este buzón comentando el moti
     
 Para que tu empresa aproveche al máximo Cabify, queremos que gestiones tu movilidad de la forma más eficiente, entonces aquí tienes todas nuestras funcionalidades explicadas en un solo lugar:link`,
 
-    plantillarequest:`Escoge una opcion:,Plantilla Carga Masiva,Plantilla Politica de Viaje`,
+    plantillarequest:`Escoge una el tipo de plantilla:,Carga Masiva,Politica de Viaje`,
 
     masivepantilla:`Plantilla de carga masiva: link`,
     travelpolicyplantilla:`Plantilla de política de viaje: link`,

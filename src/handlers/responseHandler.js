@@ -24,11 +24,11 @@ const getResponse = (messageBody) => {
     } else if (lowerMsg == 'solicitud plantilla') {
         let qr = formatQuickReplies(messages.plantillarequest);
         return [[qr, 'interactive']];
-    } else if (lowerMsg == 'plantilla carga masiva') {
+    } else if (lowerMsg == 'carga masiva') {
         let text = formatText(messages.masivepantilla);
         let list = formatList(messages.welcome_options);
         return [[text, 'text'], [list, 'interactive']];
-    } else if (lowerMsg == 'plantilla politica de viaje') {
+    } else if (lowerMsg == 'politica de viaje') {
         let text = formatText(messages.travelpolicyplantilla);
         let list = formatList(messages.welcome_options);
         return [[text, 'text'], [list, 'interactive']];

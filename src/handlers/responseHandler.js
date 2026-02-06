@@ -18,7 +18,8 @@ const removeLineBreaks = (text) => {
 }
 
 const formatText = (text) => {
-    return { body: text };
+    return JSON.stringify({ body: text });
+    
 }
 
 const formatList = (options) => {

@@ -1,5 +1,7 @@
 const fs = require("fs").promises;
-const filePath = '../utils/session.json';
+const path = require('path');
+const filePath = path.resolve(__dirname, '..', 'utils', 'session.json');
+
 
 const readFile = async () => {
     try {

@@ -1,6 +1,6 @@
 const whatsappService = require('../services/whatsappService');
 const responseHandler = require('../handlers/responseHandler');
-const { editFile } = require('../handlers/sessionHandler');
+const { editFile, readFile } = require('../handlers/sessionHandler');
 
 const handleMessage = async (req, res) => {
     const body = req.body;

@@ -24,9 +24,9 @@ const handleMessage = async (req, res) => {
     }
     let from = body.entry[0].changes[0].value.messages[0].from;
     const file = await readFile();
-    const session = file.sessions[phone];
+    const session = file.sessions[from];
     if (session == undefined) {
-        await editFile(phone, 'name', userName)
+        await editFile(from, 'name', userName)
     }
     let response = responseHandler.getResponse(msgbody, from, session);
 

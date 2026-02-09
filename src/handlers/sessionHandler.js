@@ -1,7 +1,7 @@
 const fs = require("fs").promises;
 const path = require('path');
 
-const SESSION_FILE = path.join(__dirname, 'utils', 'session.json');
+const SESSION_FILE = path.join(__dirname, '..', 'utils', 'session.json');
 
 const readFile = async () => {
     try {

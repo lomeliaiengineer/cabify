@@ -1,6 +1,6 @@
 const whatsappService = require('../services/whatsappService');
 const responseHandler = require('../handlers/responseHandler');
-const messages = require('../handlers/messages');
+const messages = require('../utils/messages');
 const e = require('express');
 
 const handleMessage = async (req, res) => {
@@ -19,8 +19,13 @@ const handleMessage = async (req, res) => {
         }
     }
     let from = body.entry[0].changes[0].value.messages[0].from;
+    const file = await readFile();
+    const session = file.sessions[phone];
+    if (session == undefined) {
+        await editFile(phone, 'name', userName)
+    }
+    let response = responseHandler.getResponse(msgbody, from, session);
 
-    let response = responseHandler.getResponse(msgbody);
 
     if (response.length > 1) {
         response.forEach(async (resp) => {

@@ -5,6 +5,19 @@ Estoy aquí para darte una respuesta inmediata y que no pierdas tiempo esperando
     welcome_options: `¿Cómo podemos ayudarte hoy?, Elige una opción:,,Menu,Dudas con plataforma,Cuenta bloqueada,Carga de facturas,¿Nuevo en la plataforma?,Solicitud Plantilla`,
     
     accountblocked:`Podrías facilitarnos el RUC de empresa`,
+    invoinces:(invoices)=>{`Hemos identificado que las siguientes facturas estan bloqueando tu cuenta: 
+        
+${invoicesId} 
+                                                                                                 
+Para reactivarla rápido:
+
+Si ya pagaste: por favor envía el comprobante a facturacion.empresas.pe@cabify.zendesk.com para la captura.
+
+Si ya lo enviaste y sigues sin acceso: por favor escribe *incidente*`},
+    askIncident: 'Facilítanos tu número de incidencia para que podamos insistir internamente y solucionarlo de inmediato',
+    invoiceincident:`Gracias por la información.
+    
+Una persona de nuestro equipo se comunicará contigo en breve para ayudarte con tu incidencia.`,
     billingupload:`Para que podamos cargar tus facturas en la plataforma, por favor envía todos los sustentos necesarios a facturacion.empresas.pe@cabify.zendesk.com. 
     
 Si algo falló en la carga, alzalo igualmente por este buzón comentando el motivo de rechazo.`,

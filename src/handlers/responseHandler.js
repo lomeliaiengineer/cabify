@@ -1,7 +1,10 @@
-const messages = require("./messages");
+const messages = require("../utils/messages");
+const { getInvoices } = require("./googleSheetHandler");
+const { editFile } = require("./sessionHandler");
 
-const getResponse = (messageBody) => {
+const getResponse = async (messageBody, from, context) => {
     const lowerMsg = messageBody.toLowerCase().trim();
+
     console.log('Received message:', lowerMsg);
     if (lowerMsg == 'cabify') {
         let text = formatText(messages.welcome);
@@ -12,6 +15,21 @@ const getResponse = (messageBody) => {
         return [[list, 'interactive']];
     } else if (lowerMsg == 'cuenta bloqueada') {
         let text = formatText(messages.accountblocked);
+        await editFile(from, 'askRUC', 'yes');
+        return [[text, 'text']];
+    }else if (context.askRUC == 'yes') {
+        let invoices = await getInvoicesByRUC(lowerMsg);
+        let text = formatText(messages.invoinces(formatInvoiceMessage(invoices)));
+        await editFile(from, 'askRUC', 'done');
+        return [[text, 'text']];
+    }else if (lowerMsg == 'incidente') {
+        let text = formatText(messages.askIncident);
+        await editFile(from, 'askIncident', 'yes');
+        return [[text, 'text']];
+    } else if (context.askIncident == 'yes') {
+        await saveIncident(lowerMsg);
+        let text = formatText(messages.invoiceincident);
+        await editFile(from, 'askIncident', 'done');
         return [[text, 'text']];
     } else if (lowerMsg == 'carga de facturas') {
         let text = formatText(messages.billingupload);
@@ -32,51 +50,74 @@ const getResponse = (messageBody) => {
         let text = formatText(messages.travelpolicyplantilla);
         let list = formatList(messages.welcome_options);
         return [[text, 'text'], [list, 'interactive']];
-    }else if (lowerMsg == 'login') {
+    } else if (lowerMsg == 'login') {
         let text = formatText(messages.login);
         let list = formatList(messages.douts_options);
         return [[text, 'text'], [list, 'interactive']];
-    }else if (lowerMsg == 'gestión usuarios y viaje') {
+    } else if (lowerMsg == 'gestión usuarios y viaje') {
         let list = formatList(messages.usertravels_options);
         return [[list, 'interactive']];
-    }else if (lowerMsg == 'gestión usuarios') {
+    } else if (lowerMsg == 'gestión usuarios') {
         let text = formatText(messages.usermanagement);
         return [[text, 'text']];
-    }else if (lowerMsg == 'politicas de viajes') {
+    } else if (lowerMsg == 'politicas de viajes') {
         let text = formatText(messages.travelpolicy);
         return [[text, 'text']];
-    }else if (lowerMsg == 'centro de coste') {
+    } else if (lowerMsg == 'centro de coste') {
         let text = formatText(messages.costcenter);
         return [[text, 'text']];
-    }else if (lowerMsg == 'reportes de viajes') {
+    } else if (lowerMsg == 'reportes de viajes') {
         let text = formatText(messages.travelreports);
         return [[text, 'text']];
-    }else if (lowerMsg == 'control de gastos') {
+    } else if (lowerMsg == 'control de gastos') {
         let qr = formatQuickReplies(messages.expensecontrol_options);
         return [[qr, 'interactive']];
-    }else if (lowerMsg == 'facturación') {
+    } else if (lowerMsg == 'facturación') {
         let text = formatText(messages.billing);
         return [[text, 'text']];
-    }else if (lowerMsg == 'canal de ayuda') {
+    } else if (lowerMsg == 'canal de ayuda') {
         let qr = formatQuickReplies(messages.helpchannel_options);
         return [[qr, 'interactive']];
-    }else if (lowerMsg == 'reporte incidencias') {
+    } else if (lowerMsg == 'reporte incidencias') {
         let text = formatText(messages.incidentreport);
         let list = formatList(messages.douts_options);
         return [[text, 'text'], [list, 'interactive']];
-    }else if (lowerMsg == 'certificado carbono') {
+    } else if (lowerMsg == 'certificado carbono') {
         let text = formatText(messages.carboncertificate);
         let list = formatList(messages.douts_options);
         return [[text, 'text'], [list, 'interactive']];
-    }else if (lowerMsg == 'otros') {
+    } else if (lowerMsg == 'otros') {
         let text = formatText(messages.others);
         let list = formatList(messages.douts_options);
         return [[text, 'text'], [list, 'interactive']];
-    }else {
+    } else {
         let text = formatText(messages.fallback);
         return [[text, 'text']];
     }
 };
+
+const getInvoicesByRUC = async (ruc) => {
+    const data = await getInvoices();
+    return data.values.filter(row => row[2] === ruc);
+}
+
+const saveIncident = async (incidents) => {
+    let array = incidents.split(',');
+    await registerIncident(array);
+}
+
+
+const formatInvoiceMessage = (invoices) => {
+    if (invoices.length === 0) {
+        return 'No hemos encontrado facturas pendientes de pago asociadas a tu RUC. Si crees que esto es un error, por favor contáctanos para ayudarte a resolverlo.';
+    }   else {
+        let invoiceMsg = "";      
+        invoices.forEach(invoice => {  
+            invoiceMsg += `Factura ${invoice[9]} por un monto de ${invoice[17]} soles, con estado de pago: ${invoice[21]}.\n`;
+        })
+        return invoiceMsg;
+    }
+}
 
 const removeLineBreaks = (text) => {
     return text.replace(/\n/g, '');

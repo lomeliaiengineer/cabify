@@ -1,9 +1,11 @@
 const fs = require("fs").promises;
-const filePath = '/utils/session.json';
+const path = require('path');
+
+const SESSION_FILE = path.join(__dirname, 'utils', 'session.json');
 
 const readFile = async () => {
     try {
-        const file = await fs.readFile(__dirname + filePath, "utf8");
+        const file = await fs.readFile(SESSION_FILE, "utf8");
         const jsonData = JSON.parse(file);
         const sessions = jsonData.sessions;
         return jsonData;

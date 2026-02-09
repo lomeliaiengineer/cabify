@@ -4,7 +4,8 @@ const { editFile, readFile } = require('../handlers/sessionHandler');
 
 const handleMessage = async (req, res) => {
     const body = req.body;
-
+    console.log('Received webhook:', JSON.stringify(body, null, 2));
+    res.send('OK');
     let type = body.entry[0].changes[0].value.messages[0].type;
     let msgbody = '';
     if (type === 'text') {

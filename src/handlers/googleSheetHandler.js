@@ -1,3 +1,4 @@
+require('dotenv').config()
 const { google } = require('googleapis');
 const serviceAccount = JSON.parse(process.env.SERVICE_ACCOUNT);
 

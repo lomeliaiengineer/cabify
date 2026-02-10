@@ -30,17 +30,15 @@ Para que tu empresa aproveche al máximo Cabify, queremos que gestiones tu movil
     masivepantilla:`Plantilla de carga masiva: link`,
     travelpolicyplantilla:`Plantilla de política de viaje: link`,
     douts_options:`Dudas con plataforma,Elige una opción:,,Menu,Login,Gestión usuarios y Viajes,Control de gastos,Canal de ayuda,Otros`,
-    login:`Para que ingreses a tu cuenta ahora mismo, elige la opción que más te convenga:
-
-Desde el celular: https://www.youtube.com/watch?v=FhgTQG15Vq4 
-Desde la computadora: https://youtu.be/epxbjKC8dNg`,
+    login:`Para que ingreses a tu cuenta ahora mismo, elige la opción que más te convenga,Desde el celular,Desde la computadora`,
+    loginapp:`1500392188174836,📱 Para ingresar a tu cuenta desde la app, sigue este paso a paso:`,
+    loginweb:`2390780324676166,💻 Para ingresar a tu cuenta desde la web, sigue este paso a paso:`,
 //Gestión usuarios y Viajes
     usertravels_options:`Gestion de usuarios y viajes, Elige una opción:,,MenuGestión usuarios,Politicas de viajes,Centro de coste,Reportes de viajes`,
-    usermanagement:`🏃‍♂️ Para que tu equipo empiece a moverse ahora mismo, solo tienes que darlos de alta en la plataforma. Sigue este paso a paso para crearlos:
-
-Nuevo usuario: https://youtu.be/gexc71CUdAg 
+    usermanagement:`🏃‍♂️ Para que tu equipo empiece a moverse ahora mismo, solo tienes que darlos de alta en la plataforma. 
 
 Hacerlo así te permite tener el control total de tu cuenta de forma sencilla.`,
+    newuservideo:`1552379126067493,Sigue este paso a paso para crearlos:`,
     travelpolicy:`📢 Configura las políticas de viaje para que tus usuarios viajen siempre dentro de los parámetros que tu empresa necesita. Sigue este paso a paso para configurarlas:
 
 Configurar políticas de viaje: VIDEO`,
@@ -53,17 +51,13 @@ Generar reportes de viajes: VIDEO`,
 
 //Control de gastos
     expensecontrol_options:`Elige una opción:,Facturación`,
-    billing:`🧾 Para descargar tus reportes facturación, sigue el paso a paso: 
-
-https://youtu.be/f4LIY7ME4tc  
-
-➡️ ¿Ya pagaste? Si tu factura figura como pendiente, envía el comprobante a facturacion.empresas.pe@cabify.zendesk.com para que tu cuenta siga activa y sin bloqueos.`,
+    billing:`➡️ ¿Ya pagaste? Si tu factura figura como pendiente, envía el comprobante a facturacion.empresas.pe@cabify.zendesk.com para que tu cuenta siga activa y sin bloqueos.`,
+    billingvideo:`926158120097438,🧾 Para descargar tus reportes facturación, sigue el paso a paso: `,
 
 //Canal de ayuda
     helpchannel_options:`Elige una opción:,Reporte incidencias,Certificado carbono`,
-    incidentreport:`⛔Para que podamos ayudarte a resolver cualquier inconveniente con tus trayectos, es fundamental que sepamos qué ocurrió. 
-
-Aquí tienes cómo reportarlo de forma sencilla para que podamos darte una solución: https://youtu.be/KMEYtXNsWPo`,
+    incidentreport:`⛔Para que podamos ayudarte a resolver cualquier inconveniente con tus trayectos, es fundamental que sepamos qué ocurrió.`,
+    incidentvideo:`884847111047526,Aquí tienes cómo reportarlo de forma sencilla para que podamos darte una solución`,
     carboncertificate:`💨 Cabify te ayuda a compensar la huella de carbono de tus viajes. Descarga tu certificado de carbono siguiendo este paso a paso: link`,
 
 //Otros

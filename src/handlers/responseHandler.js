@@ -53,16 +53,22 @@ const getResponse = async (messageBody, from, context) => {
         let list = formatList(messages.welcome_options);
         return [[text, 'text'], [list, 'interactive']];
     } else if (lowerMsg == 'login') {
-        let text = formatText(messages.login);
-        let list = formatList(messages.douts_options);
-        return [[text, 'text'], [list, 'interactive']];
-    } else if (lowerMsg == 'gestión usuarios y viaje') {
+        let qr = formatQuickReplies(messages.login);
+        return [[qr, 'interactive']];
+    } else if (lowerMsg == 'desde el celular') {
+        let video = formatVideo(messages.loginapp);
+        return [[video, 'video']];
+    }else if (lowerMsg == 'desde la computadora') {
+        let video = formatVideo(messages.loginweb);
+        return [[video, 'video']];
+    }else if (lowerMsg == 'gestión usuarios y viaje') {
         let list = formatList(messages.usertravels_options);
         return [[list, 'interactive']];
     } else if (lowerMsg == 'gestión usuarios') {
         let text = formatText(messages.usermanagement);
-        return [[text, 'text']];
-    } else if (lowerMsg == 'politicas de viajes') {
+        let video = formatVideo(messages.newuservideo);
+        return [[text, 'text'], [video, 'video']];
+    }else if (lowerMsg == 'politicas de viajes') {
         let text = formatText(messages.travelpolicy);
         return [[text, 'text']];
     } else if (lowerMsg == 'centro de coste') {
@@ -76,22 +82,24 @@ const getResponse = async (messageBody, from, context) => {
         return [[qr, 'interactive']];
     } else if (lowerMsg == 'facturación') {
         let text = formatText(messages.billing);
-        return [[text, 'text']];
+        let video = formatVideo(messages.billingvideo);
+        return [[text, 'text'], [video, 'video']];
     } else if (lowerMsg == 'canal de ayuda') {
         let qr = formatQuickReplies(messages.helpchannel_options);
         return [[qr, 'interactive']];
     } else if (lowerMsg == 'reporte incidencias') {
         let text = formatText(messages.incidentreport);
-        let list = formatList(messages.douts_options);
-        return [[text, 'text'], [list, 'interactive']];
+        let video = formatVideo(messages.incidentvideo);
+        return [[text, 'text'], [video, 'video']];
     } else if (lowerMsg == 'certificado carbono') {
         let text = formatText(messages.carboncertificate);
-        let list = formatList(messages.douts_options);
-        return [[text, 'text'], [list, 'interactive']];
+        return [[text, 'text']];
     } else if (lowerMsg == 'otros') {
         let text = formatText(messages.others);
-        let list = formatList(messages.douts_options);
-        return [[text, 'text'], [list, 'interactive']];
+        return [[text, 'text']];
+    } else if (lowerMsg == 'menu') {
+        let list = formatList(messages.welcome_options);
+        return [[list, 'interactive']];
     } else {
         let text = formatText(messages.fallback);
         return [[text, 'text']];
@@ -184,8 +192,9 @@ const formatQuickReplies = (options) => {
     return removeLineBreaks(JSON.stringify(quickReplies));
 }
 
-const formatVideo = (url) => {
-    let video = { "link": url }
+const formatVideo = (data) => {
+    let details = data.split(',');
+    let video = { "id": details[0], "caption": details[1] }
     return JSON.stringify(video);
 }
 

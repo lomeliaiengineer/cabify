@@ -18,13 +18,13 @@ const getResponse = async (messageBody, from, context) => {
         let text = formatText(messages.accountblocked);
         await editFile(from, 'askRUC', 'yes');
         return [[text, 'text']];
-    }else if (context.askRUC == 'yes') {
+    } else if (context.askRUC == 'yes') {
         let invoices = await getInvoicesByRUC(lowerMsg);
         let text = formatText(messages.invoinces(formatInvoiceMessage(invoices)));
         console.log(text)
         await editFile(from, 'askRUC', 'done');
         return [[text, 'text']];
-    }else if (lowerMsg == 'incidente') {
+    } else if (lowerMsg == 'incidente') {
         let text = formatText(messages.askIncident);
         await editFile(from, 'askIncident', 'yes');
         return [[text, 'text']];
@@ -112,9 +112,9 @@ const saveIncident = async (incidents) => {
 const formatInvoiceMessage = (invoices) => {
     if (invoices.length === 0) {
         return 'No hemos encontrado facturas pendientes de pago asociadas a tu RUC. Si crees que esto es un error, por favor contáctanos para ayudarte a resolverlo.';
-    }   else {
-        let invoiceMsg = "";      
-        invoices.forEach(invoice => {  
+    } else {
+        let invoiceMsg = "";
+        invoices.forEach(invoice => {
             invoiceMsg += `Factura ${invoice[18]} por un monto de ${invoice[26]} soles, con estado de pago: ${invoice[30]}.\n`;
         })
         console.log(invoiceMsg);
@@ -184,6 +184,10 @@ const formatQuickReplies = (options) => {
     return removeLineBreaks(JSON.stringify(quickReplies));
 }
 
+const formatVideo = (url) => {
+    let video = { "link": url }
+    return JSON.stringify(video);
+}
 
 
 

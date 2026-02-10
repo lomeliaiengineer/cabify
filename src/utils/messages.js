@@ -7,7 +7,7 @@ Estoy aquí para darte una respuesta inmediata y que no pierdas tiempo esperando
     accountblocked:`Podrías facilitarnos el RUC de empresa`,
     invoinces:(invoices)=>{`Hemos identificado que las siguientes facturas estan bloqueando tu cuenta: 
         
-${invoicesId} 
+${invoices} 
                                                                                                  
 Para reactivarla rápido:
 

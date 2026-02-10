@@ -11,7 +11,7 @@ const serviceAccountAuth = new google.auth.JWT({
 const sheets = google.sheets('v4');
 
 function getInvoices() {
-    let range = 'Base facturas!A1'
+    let range = 'Base facturas'
     return sheets.spreadsheets.values.get({
         auth: serviceAccountAuth,
         spreadsheetId: '1WhfsPE30_bs4UcozyVmf8tTcL9wTxuiHzqqMX3xihsc',

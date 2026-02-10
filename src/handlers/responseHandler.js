@@ -20,6 +20,7 @@ const getResponse = async (messageBody, from, context) => {
     }else if (context.askRUC == 'yes') {
         let invoices = await getInvoicesByRUC(lowerMsg);
         let text = formatText(messages.invoinces(formatInvoiceMessage(invoices)));
+        console.log(text)
         await editFile(from, 'askRUC', 'done');
         return [[text, 'text']];
     }else if (lowerMsg == 'incidente') {
@@ -113,7 +114,7 @@ const formatInvoiceMessage = (invoices) => {
     }   else {
         let invoiceMsg = "";      
         invoices.forEach(invoice => {  
-            invoiceMsg += `Factura ${invoice[9]} por un monto de ${invoice[17]} soles, con estado de pago: ${invoice[21]}.\n`;
+            invoiceMsg += `Factura ${invoice[18]} por un monto de ${invoice[26]} soles, con estado de pago: ${invoice[30]}.\n`;
         })
         console.log(invoiceMsg);
         return invoiceMsg;

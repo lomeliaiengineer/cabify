@@ -18,7 +18,7 @@ const readFile = async () => {
 
 
 const editFile = async (phone, name, el) => {
-    const jsonData = await readFile();
+    const jsonData = await fs.readFile(SESSION_FILE, "utf8");
     const sessions = jsonData.sessions;
     console.log('entro', sessions[phone])
     if (sessions[phone] == undefined) {
@@ -45,12 +45,10 @@ const editFile = async (phone, name, el) => {
         return;
     }
 
-
-
 }
 
 const emptySession = async (phone) => {
-    const jsonData = await readFile();
+    const jsonData = await fs.readFile(SESSION_FILE, "utf8");
     const sessions = jsonData.sessions;
     console.log('entro', sessions[phone])
 

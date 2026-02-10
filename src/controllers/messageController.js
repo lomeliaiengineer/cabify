@@ -11,6 +11,9 @@ const handleMessage = async (req, res) => {
     }
     let type = body?.entry?.[0]?.changes?.[0]?.value?.messages?.[0]?.type;
     let msgbody = '';
+    if (!type) {
+        return;
+    }
     if (type === 'text') {
         msgbody = body.entry[0].changes[0].value.messages[0].text.body;
     } else if (type === 'interactive') {

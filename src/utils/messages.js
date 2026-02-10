@@ -5,7 +5,7 @@ Estoy aquí para darte una respuesta inmediata y que no pierdas tiempo esperando
     welcome_options: `¿Cómo podemos ayudarte hoy?, Elige una opción:,,Menu,Dudas con plataforma,Cuenta bloqueada,Carga de facturas,¿Nuevo en la plataforma?,Solicitud Plantilla`,
     
     accountblocked:`Podrías facilitarnos el RUC de empresa`,
-    invoinces:(invoices)=>{`Hemos identificado que las siguientes facturas estan bloqueando tu cuenta: 
+    invoinces:(invoices)=>{return `Hemos identificado que las siguientes facturas estan bloqueando tu cuenta: 
         
 ${invoices} 
                                                                                                  

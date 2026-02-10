@@ -1,6 +1,7 @@
 const messages = require("../utils/messages");
-const { getInvoices } = require("./googleSheetHandler");
+const { getInvoices, registerIncident } = require("./googleSheetHandler");
 const { editFile } = require("./sessionHandler");
+
 
 const getResponse = async (messageBody, from, context) => {
     const lowerMsg = messageBody.toLowerCase().trim();

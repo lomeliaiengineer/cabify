@@ -18,7 +18,9 @@ const readFile = async () => {
 
 
 const editFile = async (phone, name, el) => {
-    const jsonData = await fs.readFile(SESSION_FILE, "utf8");
+    const file = await fs.readFile(SESSION_FILE, "utf8");
+    const jsonData = JSON.parse(file);
+    console.log('Current JSON data:', jsonData);
     const sessions = jsonData.sessions;
     if (sessions[phone] == undefined) {
         sessions[phone] = {};

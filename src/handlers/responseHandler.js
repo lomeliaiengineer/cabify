@@ -19,6 +19,7 @@ const getResponse = async (messageBody, from, context) => {
         return [[text, 'text']];
     }else if (context.askRUC == 'yes') {
         let invoices = await getInvoicesByRUC(lowerMsg);
+        console.log('Invoices found for RUC:', invoices);
         let text = formatText(messages.invoinces(formatInvoiceMessage(invoices)));
         await editFile(from, 'askRUC', 'done');
         return [[text, 'text']];
@@ -98,6 +99,7 @@ const getResponse = async (messageBody, from, context) => {
 
 const getInvoicesByRUC = async (ruc) => {
     const data = await getInvoices();
+    console.log('Data from Google Sheets:', data);
     return data.values.filter(row => row[2] === ruc);
 }
 

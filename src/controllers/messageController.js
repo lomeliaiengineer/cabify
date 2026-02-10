@@ -4,7 +4,7 @@ const { editFile, readFile } = require('../handlers/sessionHandler');
 
 const handleMessage = async (req, res) => {
     const body = req.body;
-    console.log('Incoming message body:', JSON.stringify(body, null, 2));
+    //console.log('Incoming message body:', JSON.stringify(body, null, 2));
     let callback = body?.entry?.[0]?.changes?.[0]?.value?.statuses?.[0]?.type;
     if (callback === 'set-callback') {
         res.status(200).send('Callback set successfully');

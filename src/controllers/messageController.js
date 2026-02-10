@@ -28,8 +28,8 @@ const handleMessage = async (req, res) => {
     if (session == undefined) {
         await editFile(from, 'name', 'user')
     }
-    let response = responseHandler.getResponse(msgbody, from, session);
-
+    let response = await responseHandler.getResponse(msgbody, from, session);
+    console.log('Generated response:', response.length);
 
     if (response.length > 1) {
         response.forEach(async (resp) => {
